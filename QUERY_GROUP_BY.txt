@@ -13,9 +13,7 @@ AVG(vote) AS average_grade
 FROM exam_student 
 GROUP BY exam_id;
 
-SELECT d.name AS department_name, 
-COUNT(de.id) AS num_degrees 
-FROM departments d 
-JOIN degrees de 
-ON de.department_id = d.id 
-GROUP BY d.id, d.name;
+SELECT department_id AS id_department,
+COUNT(*) AS tot_corsi_laurea
+FROM degrees
+GROUP BY department_id;
